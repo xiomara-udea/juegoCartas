@@ -14,6 +14,10 @@ public class Carta {
         indice = r.nextInt(52) + 1;
     }
     
+    public int obtenerIndice(){
+        return indice;
+    }
+    
     public void mostrar(JPanel pnl, int x, int y){
         String nombreImagen = "/imagenes/CARTA"+String.valueOf(indice)+".JPG";
         ImageIcon imagen = new ImageIcon(getClass().getResource(nombreImagen));

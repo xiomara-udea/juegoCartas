@@ -26,6 +26,7 @@ public class FrmJuego extends javax.swing.JFrame {
         tpJugadores = new javax.swing.JTabbedPane();
         pnlJugador1 = new javax.swing.JPanel();
         pnlJugador2 = new javax.swing.JPanel();
+        btnOrdenar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,13 @@ public class FrmJuego extends javax.swing.JFrame {
 
         tpJugadores.addTab("Raúl Vidal", pnlJugador2);
 
+        btnOrdenar.setText("Ordenar");
+        btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,6 +92,8 @@ public class FrmJuego extends javax.swing.JFrame {
                 .addComponent(btnRepartir)
                 .addGap(18, 18, 18)
                 .addComponent(btnVerificar)
+                .addGap(18, 18, 18)
+                .addComponent(btnOrdenar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(tpJugadores)
         );
@@ -93,7 +103,8 @@ public class FrmJuego extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRepartir)
-                    .addComponent(btnVerificar))
+                    .addComponent(btnVerificar)
+                    .addComponent(btnOrdenar))
                 .addGap(33, 33, 33)
                 .addComponent(tpJugadores))
         );
@@ -122,6 +133,13 @@ public class FrmJuego extends javax.swing.JFrame {
         }
         JOptionPane.showMessageDialog(null, mensaje);
     }//GEN-LAST:event_btnVerificarActionPerformed
+
+    private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
+        jugador1.ordenar();
+        jugador2.ordenar();
+        jugador1.mostrar(pnlJugador1);
+        jugador2.mostrar(pnlJugador2);
+    }//GEN-LAST:event_btnOrdenarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,6 +177,7 @@ public class FrmJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnOrdenar;
     private javax.swing.JButton btnRepartir;
     private javax.swing.JButton btnVerificar;
     private javax.swing.JPanel pnlJugador1;

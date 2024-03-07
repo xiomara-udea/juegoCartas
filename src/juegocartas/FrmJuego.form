@@ -28,6 +28,8 @@
               <Component id="btnRepartir" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnVerificar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnOrdenar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
           <Component id="tpJugadores" alignment="0" max="32767" attributes="0"/>
@@ -40,6 +42,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnRepartir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnVerificar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnOrdenar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Component id="tpJugadores" max="32767" attributes="0"/>
@@ -129,5 +132,13 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="btnOrdenar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>
