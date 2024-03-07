@@ -1,6 +1,7 @@
 package juegocartas;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Jugador {
@@ -24,6 +25,33 @@ public class Jugador {
            c.mostrar(pnl, x, MARGEN);
            x += DISTANCIA;
        }
+       
        pnl.repaint();
+   }
+   
+   public String getGrupos(){
+       String mensaje = "No se encontraron grupos";
+       int [] contadores = new int [NombreCarta.values().length];
+       for (Carta c: cartas){
+           contadores[c.getNombre().ordinal()]++;
+       }
+       int totalGrupos = 0;
+       for (int c: contadores){
+           if (c>=2){
+               totalGrupos++;
+           }
+       }
+       
+       if (totalGrupos >0){
+           mensaje = "Los grupos encontrados fueron: \n";
+           for ( int i= 0; i<contadores.length; i++){
+               if(contadores[i]>1){
+                   mensaje += Grupo.values()[contadores[i]] + " de " + NombreCarta.values()[i] +  "\n";
+               }
+               
+           }
+       }
+       
+       return mensaje;
    }
 }

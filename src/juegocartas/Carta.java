@@ -14,7 +14,6 @@ public class Carta {
         indice = r.nextInt(52) + 1;
     }
     
-    
     public void mostrar(JPanel pnl, int x, int y){
         String nombreImagen = "/imagenes/CARTA"+String.valueOf(indice)+".JPG";
         ImageIcon imagen = new ImageIcon(getClass().getResource(nombreImagen));
@@ -38,6 +37,23 @@ public class Carta {
         }
     }
     
+    public NombreCarta getNombre(){
+        int numero = indice%13;
+        if(numero == 0){
+            numero = 13;
+        }
+        return NombreCarta.values()[numero - 1];
+    }
+    
+    public int ObtenerValor(){
+        int valor;
+        NombreCarta nombre = getNombre();
+        if (nombre == NombreCarta.AS || nombre == NombreCarta.JACK || nombre == NombreCarta.QUEEN || nombre == NombreCarta.KING){
+            valor = 10;
+        } 
+        else{
+           valor = (indice%13) -1;
+        }
+        return valor;
+    }
 }
-
- 
