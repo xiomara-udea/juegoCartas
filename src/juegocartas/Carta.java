@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 public class Carta {
     
     private int indice;
+    Boolean cartaMarcada = false;
     
     public Carta(Random r){
         indice = r.nextInt(52) + 1;
@@ -56,10 +57,15 @@ public class Carta {
             valor = 10;
         } 
         else{
-           valor = (indice%13) -1;
+           valor = (indice%13);
         }
         return valor;
     }
     
-    
+    void marcarCarta() {
+        this.cartaMarcada = true;
+    }
+
+
+
 }

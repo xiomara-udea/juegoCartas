@@ -27,6 +27,7 @@ public class FrmJuego extends javax.swing.JFrame {
         pnlJugador1 = new javax.swing.JPanel();
         pnlJugador2 = new javax.swing.JPanel();
         btnOrdenar = new javax.swing.JButton();
+        btnPuntaje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +84,13 @@ public class FrmJuego extends javax.swing.JFrame {
             }
         });
 
+        btnPuntaje.setText("Puntaje");
+        btnPuntaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPuntajeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,6 +102,8 @@ public class FrmJuego extends javax.swing.JFrame {
                 .addComponent(btnVerificar)
                 .addGap(18, 18, 18)
                 .addComponent(btnOrdenar)
+                .addGap(18, 18, 18)
+                .addComponent(btnPuntaje)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(tpJugadores)
         );
@@ -104,7 +114,8 @@ public class FrmJuego extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRepartir)
                     .addComponent(btnVerificar)
-                    .addComponent(btnOrdenar))
+                    .addComponent(btnOrdenar)
+                    .addComponent(btnPuntaje))
                 .addGap(33, 33, 33)
                 .addComponent(tpJugadores))
         );
@@ -140,6 +151,22 @@ public class FrmJuego extends javax.swing.JFrame {
         jugador1.mostrar(pnlJugador1);
         jugador2.mostrar(pnlJugador2);
     }//GEN-LAST:event_btnOrdenarActionPerformed
+
+    private void btnPuntajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntajeActionPerformed
+        int puntajeJugador1 = jugador1.ObtenerPuntaje();
+        int puntajeJugador2 = jugador2.ObtenerPuntaje();
+        
+        if(puntajeJugador1>puntajeJugador2){
+            JOptionPane.showMessageDialog(null,"Puntaje del jugador 1: " + puntajeJugador1 + "\n" + "Puntaje del jugador 2: " + puntajeJugador2 +"\n" + "Gana el jugador 2" + "\n");  
+        }
+        else if(puntajeJugador2>puntajeJugador1){
+            JOptionPane.showMessageDialog(null,"Puntaje del jugador 1: " + puntajeJugador1 + "\n" + "Puntaje del jugador 2: " + puntajeJugador2 + "\n" + "Gana el jugador 1" + "\n");  
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Puntaje del jugador 1: " + puntajeJugador1 + "\n" +  "Puntaje del jugador 2: " + puntajeJugador2 + "\n" + " Quedan empatados" + "\n "); 
+        }
+        
+    }//GEN-LAST:event_btnPuntajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,6 +205,7 @@ public class FrmJuego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOrdenar;
+    private javax.swing.JButton btnPuntaje;
     private javax.swing.JButton btnRepartir;
     private javax.swing.JButton btnVerificar;
     private javax.swing.JPanel pnlJugador1;
